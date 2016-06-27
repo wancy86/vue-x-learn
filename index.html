@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vue-vux</title>
+    <!--include Vux style-->
+    <link rel="stylesheet" href="bower_components/vux/dist/vux.css">
+    <!--include Vue yourself-->
+    <script src="bower_components/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="demo">
+        <group>
+            <cell title="vue" value="cool"></cell>
+            <cell title="vux" :value="message"></cell>
+        </group>
+    </div>
+    <!--include the components you need-->
+    <script src="bower_components/vux/dist/components/group/index.js"></script>
+    <script src="bower_components/vux/dist/components/cell/index.js"></script>
+    <script>
+    // register components
+    Vue.component('group', vuxGroup);
+    Vue.component('cell', vuxCell);
+
+    new Vue({
+        el: '#demo',
+        data:{
+            message:"hello vux"
+        }
+    });
+    </script>
+</body>
+
+</html>
